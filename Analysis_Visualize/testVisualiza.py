@@ -22,3 +22,4 @@ plt.ylabel('Y')
 plt.show() """
 
 data = np.random.multivariate_normal([0, 0], [[5, 2], [2, 2]],size=2000)
+b =2
