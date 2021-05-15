@@ -1,5 +1,4 @@
 import os
-
 import pandas
 
 
@@ -12,21 +11,21 @@ def create_project_direction(directory):
 #create_project_direction('thenewboston')
 
 #Create queue and crawled files (if not created)
-def create_data_files(project_name, base_url):
+def create_data_files(project_name, url):
     queue = project_name + '/queue.txt'
     crawled = project_name + '/crawled.txt'
-    data = project_name + '/data.csv'
-    col = ['Giá', 'DT', 'Đường', 'Phường-Xã', 'Quận-Huyện', 'Thành Phố', 'Hướng', 'Phòng ăn', 'Loại tin',
-           'Đường trước nhà', 'Nhà bếp', 'Loại BDS', 'Pháp lý', 'Sân thượng', 'Chiều ngang', 'Số lầu',
-           'Chổ để xe hơi', 'Chiều dài', 'Số phòng ngủ', 'Chính chủ']
-    d = pandas.DataFrame(columns=col)
-    d.to_csv(data)
+    #data = 'data.csv'
+    #col = ['Đường', 'Phường-Xã', 'Quận-Huyện', 'Thành Phố', 'Giá', 'Loại tin', 'Loại BDS', 'Chính chủ',
+    #               'Pháp lý', 'DT', 'Chiều ngang', 'Chiều dài', 'Số lầu', 'Số phòng ngủ', 'Hướng', 'Đường trước nhà',
+    #               'Phòng ăn', 'Nhà bếp', 'Sân thượng', 'Chổ để xe hơi']
+    #d = pandas.DataFrame(columns=col)
+    #d.to_csv(data, encoding='utf-8-sig', index=True)
     if not os.path.isfile(queue):
-        write_file(queue , '')
+        write_file(queue , url)
     if not os.path.isfile(crawled):
         write_file(crawled , '')
-    if not os.path.isfile(data):
-        write_file(data, '')
+    #if not os.path.isfile(data):
+    #    write_file(data, '')
 
 
 
